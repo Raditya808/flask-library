@@ -8,7 +8,7 @@ def index():
 <p>Click <a href="/project">here</a> to go to the project page</p>
 <p>Click <a href="/about">here</a> to go to the about page</p>''' # rute web utama tanpa slash dengan dua rute dibawah 
 
-@app.route('/project')
+@app.route('/project/')
 def project():
     return 'the project page'
 
