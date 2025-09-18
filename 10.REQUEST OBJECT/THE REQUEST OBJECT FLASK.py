@@ -52,9 +52,10 @@ def masuk():
         else:
             error = 'invalid nama pengguna / sandi'
         
+       # fix eror eror 
     return f'''
       <form method="POST" action="/login">
-    {f'<p style="color: red">{error}</p>' if error else ''}
+    {f'<p style="color: red">{error}</p>' if error else ''} 
     Nama: <input type="text" placeholder="Nama pengguna" 
     name="namapengguna"><br>
     password: <input type="password" placeholder="sandi" 
