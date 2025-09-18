@@ -53,12 +53,14 @@ def masuk():
             error = 'invalid nama pengguna / sandi'
         
     return f'''
-    <form method="POST" action="/login">
-Nama: <input type="teks" placeholder="Nama pengguna" 
-name="namapengguna"><br>
-password: <input type="password" placeholder="sandi" 
-name="sandi"><br>
-<input type="submit" value="submit">
+      <form method="POST" action="/login">
+    {f'<p style="color: red">{error}</p>' if error else ''}
+    Nama: <input type="text" placeholder="Nama pengguna" 
+    name="namapengguna"><br>
+    password: <input type="password" placeholder="sandi" 
+    name="sandi"><br>
+    <input type="submit" value="submit">
+    </form>
         ''' 
 #========================================================================
 
