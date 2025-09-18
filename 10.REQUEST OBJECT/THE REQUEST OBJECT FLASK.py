@@ -35,7 +35,7 @@ def valid_Login(namapengguna, sandi):                   #================
     return namapengguna == 'admin' and sandi == '12345' #================
                                                         #================
                                                         #================
-def user_login(namapengguna):                           #================
+def user_login(namapengguna):                           #================ 
     return f'''                                         
                                                                 
     <h1>Welcome to website using flask without templates html file
@@ -53,14 +53,15 @@ def masuk():
             error = 'invalid nama pengguna / sandi'
         
     return f'''
-    <form method="POST" action="/login">
-Nama: <input type="teks" placeholder="Nama pengguna" 
-name="namapengguna"><br>
-password: <input type="password" placeholder="sandi" 
-name="sandi"><br>
-<input type="submit" value="submit">
-        ''' 
-#========================================================================
+      <form method="POST" action="/login">
+    {f'<p style="color: red">{error}</p>' if error else ''} 
+    Nama: <input type="text" placeholder="Nama pengguna" 
+    name="namapengguna"><br>
+    password: <input type="password" placeholder="sandi" 
+    name="sandi"><br>
+    <input type="submit" value="submit">
+    </form>
+        ''' #========================================================================
 
 if __name__ == '__main__':
     app.run(debug=True, port=5000)
