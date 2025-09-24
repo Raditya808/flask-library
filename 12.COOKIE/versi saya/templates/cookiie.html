@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title></title>
+    <link href="css/style.css" rel="stylesheet" />
+  </head>
+  <body>
+    <h3>Cookie website</h3>
+    <form method="POST">
+      <input type="text" name="namapengguna" placeholder="Masukan nama" /><br />
+      <input type="submit" value="Simpan Cookie" />
+    </form>
+    {% if namapengguna %}
+    <h2>History Nama Pengguna Ketika Input</h2>
+    <p>Nama pengguna ditemukan: {{namapengguna}}</p>
+    {% endif %}
+  </body>
+</html>
