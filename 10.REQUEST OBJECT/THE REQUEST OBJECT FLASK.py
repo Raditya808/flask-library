@@ -52,7 +52,8 @@ def masuk():
         else:
             error = 'invalid nama pengguna / sandi'
         
-       # fix eror eror 
+    # fix eror eror 
+    # tambahan file menggunakan {f'<p style="color: red">{eror}</p>' if error else ''} # path ke else = 'invalid nama pengguna / sandi'
     return f'''
       <form method="POST" action="/login">
     {f'<p style="color: red">{error}</p>' if error else ''} 
