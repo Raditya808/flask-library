@@ -27,6 +27,35 @@ def get_cookies():
         return render_template('cookiie.html',namapengguna=namapengguna)
 
 
+# atau menggunakan tanpa file render
+# tanpa file html
+@app.route('/cookie', methods=['GET','POST'])
+def cookie():
+
+    if request.method == 'POST':
+
+        namapengguna = request.form.get("namapengguna")
+
+
+        resp = make_response(f'''
+        
+        <h3>Cookie tersimpan</h3>
+        <p> halo {namapengguna}</p>
+        <a href="/cookie">Home</a>
+        ''') 
+        
+        resp.set_cookie('namapengguna',namapengguna)
+        
+        return resp
+    
+    else:
+        namapengguna = request.cookies.get('namapengguna')
+        return(f'''
+        <h2> Cookies Without Html Render</h2>
+        <form method="POST" action="/cookie">
+        <input type="text" name="namapengguna" placeholder="Masukan Nama"><br>
+        <input type="submit" value="upload"> 
+        ''')
 if __name__ == '__main__':
     app.run(debug=True)
 # contoh reouting tanpa tambahan menggunakan app = Flask(__name__,template_folder='templates')
