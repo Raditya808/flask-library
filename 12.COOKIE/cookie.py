@@ -33,11 +33,6 @@ def index():
         # ambil cookie (username) dari browser 
         # mengirim variabel (username) ke file render html
 
-
-# 2
-# Cookie tanpa render template menggunakan file html 
-@app.route('/Cookie', methods=['GET','POST'])
-
 if __name__ == '__main__':
     app.run(debug=True)
 # untuk menjalankan file flask tersebut 
